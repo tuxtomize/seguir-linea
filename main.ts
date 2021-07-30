@@ -1,6 +1,39 @@
+maqueen.IR_callbackUser(function (message) {
+    if (message == 12) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Red))
+    }
+    if (message == 24) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Orange))
+    }
+    if (message == 94) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Yellow))
+    }
+    if (message == 8) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Green))
+    }
+    if (message == 28) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Blue))
+    }
+    if (message == 90) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Indigo))
+    }
+    if (message == 66) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Violet))
+    }
+    if (message == 82) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Purple))
+    }
+    if (message == 74) {
+        strip.showColor(neopixel.colors(NeoPixelColors.White))
+    }
+    if (message == 22) {
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    }
+})
 let derecha = 0
 let izquierda = 0
-let strip = neopixel.create(DigitalPin.P15, 4, NeoPixelMode.RGB)
+let strip: neopixel.Strip = null
+strip = neopixel.create(DigitalPin.P15, 4, NeoPixelMode.RGB)
 basic.forever(function () {
     izquierda = maqueen.readPatrol(maqueen.Patrol.PatrolLeft)
     derecha = maqueen.readPatrol(maqueen.Patrol.PatrolRight)
@@ -17,27 +50,5 @@ basic.forever(function () {
                 maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 255)
             }
         }
-    }
-})
-control.inBackground(function () {
-    for (let index = 0; index < 1000000000000000; index++) {
-        strip.showColor(neopixel.colors(NeoPixelColors.Red))
-        basic.pause(500)
-        strip.showColor(neopixel.colors(NeoPixelColors.Orange))
-        basic.pause(500)
-        strip.showColor(neopixel.colors(NeoPixelColors.Yellow))
-        basic.pause(500)
-        strip.showColor(neopixel.colors(NeoPixelColors.Green))
-        basic.pause(500)
-        strip.showColor(neopixel.colors(NeoPixelColors.Blue))
-        basic.pause(500)
-        strip.showColor(neopixel.colors(NeoPixelColors.Indigo))
-        basic.pause(500)
-        strip.showColor(neopixel.colors(NeoPixelColors.Violet))
-        basic.pause(500)
-        strip.showColor(neopixel.colors(NeoPixelColors.Purple))
-        basic.pause(500)
-        strip.showColor(neopixel.colors(NeoPixelColors.Purple))
-        basic.pause(500)
     }
 })
